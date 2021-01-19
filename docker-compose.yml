@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  translator-helper-client:
+    build:
+      context: ./client/
+    volumes:
+      - ./client/public:/usr/src/chatty_client/public
+    ports:
+      - "5080:80"
+  translator-helper-server:
+    build:
+      context: ./server/
+    ports:
+      - "5000:5000"
